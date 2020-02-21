@@ -77,44 +77,23 @@ class Form extends React.Component {
               <input
                 className="Form--Input Form--InputText"
                 type="text"
-                placeholder="Firstname"
+                placeholder="Họ"
                 name="firstname"
                 required
               />
-              <span>Firstname</span>
+              <span>Họ</span>
             </label>
             <label className="Form--Label">
               <input
                 className="Form--Input Form--InputText"
                 type="text"
-                placeholder="Lastname"
+                placeholder="Tên"
                 name="lastname"
                 required
               />
-              <span>Lastname</span>
+              <span>Tên</span>
             </label>
           </div>
-          <fieldset>
-            <label className="Form--Label Form--Radio">
-              <input
-                className="Form--RadioInput"
-                type="radio"
-                name="gender"
-                value="male"
-                defaultChecked
-              />
-              <span>Male</span>
-            </label>
-            <label className="Form--Label Form--Radio">
-              <input
-                className="Form--RadioInput"
-                type="radio"
-                name="gender"
-                value="female"
-              />
-              <span>Female</span>
-            </label>
-          </fieldset>
           <label className="Form--Label">
             <input
               className="Form--Input Form--InputText"
@@ -123,27 +102,27 @@ class Form extends React.Component {
               name="emailAddress"
               required
             />
-            <span>Email address</span>
+            <span>Địa chỉ Email</span>
           </label>
           <label className="Form--Label has-arrow">
             <select
               className="Form--Input Form--Select"
               name="type"
-              defaultValue="Type of Enquiry"
+              defaultValue="Nội dung liên hệ"
               required
             >
               <option disabled hidden>
-                Type of Enquiry
+                Nội dung liên hệ
               </option>
-              <option>Need to know more</option>
-              <option>Found a bug</option>
-              <option>Want to say hello</option>
+              <option>Tìm hiểu công ty</option>
+              <option>Đặt vận chuyển</option>
+              <option>Liên hệ khác</option>
             </select>
           </label>
           <label className="Form--Label">
             <textarea
               className="Form--Input Form--Textarea Form--InputText"
-              placeholder="Message"
+              placeholder="Thông điệp"
               name="message"
               rows="10"
               required
@@ -156,7 +135,7 @@ class Form extends React.Component {
               name="newsletter"
               type="checkbox"
             />
-            <span>Get news updates</span>
+            <span>Nhận thông tin cập nhật</span>
           </label>
           <div
             className="g-recaptcha"
@@ -167,7 +146,7 @@ class Form extends React.Component {
           <input
             className="Button Form--SubmitButton"
             type="submit"
-            value="Enquire"
+            value="Liên hệ"
             disabled={this.state.disabled}
           />
         </form>
