@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
 import { stringify } from 'qs'
 import { serialize } from 'dom-form-serializer'
 
@@ -8,11 +7,11 @@ import './Form.css'
 class Form extends React.Component {
   static defaultProps = {
     name: 'Liên hệ',
-    subject: '', // optional subject of the notification email
+    subject: 'Liên hệ', // optional subject of the notification email
     action: '',
-    successMessage: 'Thanks for your enquiry, we will get back to you soon',
+    successMessage: 'Cảm ơn bạn liên hệ, chúng tôi sẽ sớm gọi cho bạn',
     errorMessage:
-      'There is a problem, your message has not been sent, please try contacting us via email'
+      'Có lỗi xảy ra, xin hãy thử lại sau'
   }
 
   state = {
@@ -22,35 +21,35 @@ class Form extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    if (this.state.disabled) return
-
+    // if (this.state.disabled) return
     const form = e.target
     const data = serialize(form)
-    this.setState({ disabled: true })
-    fetch(form.action + '?' + stringify(data), {
-      method: 'POST'
-    })
-      .then(res => {
-        if (res.ok) {
-          return res
-        } else {
-          throw new Error('Network error')
-        }
-      })
-      .then(() => {
-        form.reset()
-        this.setState({
-          alert: this.props.successMessage,
-          disabled: false
-        })
-      })
-      .catch(err => {
-        console.error(err)
-        this.setState({
-          disabled: false,
-          alert: this.props.errorMessage
-        })
-      })
+    window.open(`mailto:vantaiduychuong@gmail.com?subject=${this.props.subject + (data.type ? ` - ${data.type}` : '')}&body=${data.message}`);
+    // this.setState({ disabled: true })
+    // fetch(form.action + '?' + stringify(data), {
+    //   method: 'POST'
+    // })
+    //   .then(res => {
+    //     if (res.ok) {
+    //       return res
+    //     } else {
+    //       throw new Error('Network error')
+    //     }
+    //   })
+    //   .then(() => {
+    //     form.reset()
+    //     this.setState({
+    //       alert: this.props.successMessage,
+    //       disabled: false
+    //     })
+    //   })
+    //   .catch(err => {
+    //     console.error(err)
+    //     this.setState({
+    //       disabled: false,
+    //       alert: this.props.errorMessage
+    //     })
+    //   })
   }
 
   render() {
@@ -125,14 +124,14 @@ class Form extends React.Component {
             />
             <span>Nội dung</span>
           </label>
-          <label className="Form--Label Form-Checkbox">
+          {/* <label className="Form--Label Form-Checkbox">
             <input
               className="Form--Input Form--Textarea Form--CheckboxInput"
               name="newsletter"
               type="checkbox"
             />
             <span>Nhận thông tin cập nhật</span>
-          </label>
+          </label> */}
           {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input type="hidden" name="form-name" value={name} />
           <input

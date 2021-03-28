@@ -13,7 +13,6 @@ const PageHeader = ({
   className = ''
 }) => {
   if (large) className += ' PageHeader-large'
-  console.log('backgroundImage', backgroundImage)
   return (
     <div className={`PageHeader relative ${className}`}>
       {backgroundImage && (
