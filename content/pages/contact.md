@@ -4,7 +4,7 @@ slug: contact
 title: Liên Hệ
 featuredImage: https://ucarecdn.com/e22a858a-b420-47af-99f6-ed54b6860333/
 subtitle: Hạy liên hệ hợp tác với chúng tôi ngay trong hôm nay.
-address: '111 đường Phước Tân, Giang Điền, Biên Hoà, Đồng Nai'
+address: '111 Phuoc Tan Giang đien Road, Giang Điền, Trảng Bom, Đồng Nai'
 phone: 0382749958
 phoneAlt: 0987011700
 email: vantaiduychuong@gmail.com
