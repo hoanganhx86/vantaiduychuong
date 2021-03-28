@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
@@ -18,6 +19,9 @@ export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
     <section className="section">
       <div className="container">
         <Content source={body} />
+        <Link className="Link" exact="true" to={`/contact/`}>
+          Liên hệ ngay
+        </Link>
       </div>
     </section>
   </main>
